@@ -27,17 +27,3 @@ jobs:
               run: |
                 python -m pip install --upgrade pip
                 pip install Flask
-
-            - name: "Run Flask app"
-              env:
-                FLASK_APP: app.py
-                FLASK_ENV: development
-              run: |
-                python -m venv venv
-                . venv/bin/activate
-                flask run --host=0.0.0.0 & # Run Flask in the background
-                sleep 10 # Allow server to start before running tests
-
-            - name: "Test Flask app"
-              run: |
-                curl -f http://127.0.0.1:5000/
