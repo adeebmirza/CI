@@ -46,5 +46,3 @@ jobs:
             - name: "List files in the current directory"
               run: ls
 
-            - name: "Run Python script"
-              run: python app.py # Replace with the script you want to run (e.g., Flask app)
