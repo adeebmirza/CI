@@ -1,0 +1,21 @@
+name: "Sample pipeline/workflow" # Name of the pipeline
+
+on:
+    push:
+        branches:
+            - master # Trigger the pipeline on push to master branch
+            - main # Trigger the pipeline on push to main branch
+    pull_request:
+        branches:
+            - main # Trigger the pipeline on pull requests raised to the main branch
+    workflow_dispatch: # Allow manual trigger from the GitHub Actions UI
+
+jobs:
+    sampleJob:
+        runs-on: ubuntu-latest # Run the pipeline on ubuntu-latest runner
+        steps:
+            - name: "Print hello world"
+              run: echo "Hello world"
+
+            - name: "Print current directory"
+              run: pwd
