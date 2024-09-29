@@ -35,7 +35,7 @@ jobs:
               run: |
                 python -m venv venv
                 . venv/bin/activate
-                flask run &
+                flask run --host=0.0.0.0 & # Run Flask in the background
                 sleep 10 # Allow server to start before running tests
 
             - name: "Test Flask app"
